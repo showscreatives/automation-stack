@@ -18,12 +18,12 @@ traefik:
     - TRAEFIK_ENTRYPOINTS_HTTPS_ADDRESS=:443
     - TRAEFIK_ENTRYPOINTS_HTTP_HTTP_REDIRECTIONS_ENTRYPOINT_HTTP_TO_HTTPS=true
   volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ./data/traefik/acme.json:/acme.json
+     - /var/run/docker.sock:/var/run/docker.sock:ro
+     - ./data/traefik/acme.json:/acme.json
   labels:
-  - "traefik.enable=true"
-  - "traefik.http.routers.n8n.entrypoints=https"
-  - "traefik.http.routers.n8n.rule=Host(`n8n.leadsflowsys.online`)"
+     - "traefik.enable=true"
+     - "traefik.http.routers.n8n.entrypoints=https"
+     - "traefik.http.routers.n8n.rule=Host(`n8n.leadsflowsys.online`)"
   
   postgres:
     image: postgres:16-alpine
